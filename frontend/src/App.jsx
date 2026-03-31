@@ -1,11 +1,30 @@
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Signup from "./components/Signup"
+import HomePage from "./components/HomePage"
+import Login from "./components/Login"
 
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<HomePage/>
+  },
+  {
+    path:"/register",
+    element:<Signup/>
+  },
+  {
+    path:"/login",
+    element:<Login/>
+  },
+
+])
 function App() {
 
-
   return (
-    <>
-      <h1 className=' bg-red-900'> Hello World</h1>
-    </>
+    <div className="flex justify-center items-center h-screen p-4">
+      <RouterProvider router={router}/>
+    
+    </div>
   )
 }
 
