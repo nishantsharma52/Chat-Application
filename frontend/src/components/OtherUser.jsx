@@ -9,11 +9,17 @@ const OtherUser = ({ user }) => {
   const selectedUserHandler = (user) => {
     dispatch(setSelectedUser(user))
   }
+  console.log("online users",onlineUsers);
+  console.log(user._id);
+  
+ 
+  
+  
   return (
     <>
 
       <div onClick={() => selectedUserHandler(user)} className={` ${selectedUser?._id === user?._id ? 'flex bg-white/20' : ''} flex gap-2 items-center hover:bg-white/20 rounded p-2 cursor-pointer`}>
-        <div className='avatar relative'>
+        <div className={`avatar ${isOnline ? 'online' : ''}`}>
           <div className='w-12 rounded-full'>
             <img src={user?.profilePhoto} alt="user-profile" />
            

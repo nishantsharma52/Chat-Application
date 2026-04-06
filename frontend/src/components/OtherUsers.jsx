@@ -7,7 +7,7 @@ const OtherUsers = () => {
    // my custom hook
   useGetOtherUsers()
 const {otherUsers} = useSelector(store=>store.user)
-if (!otherUsers) return;
+if (!otherUsers) return null;
   return (
     <div className='overflow-auto flex-1'>
       {
